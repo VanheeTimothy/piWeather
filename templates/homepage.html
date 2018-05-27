@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    homepage
+{% endblock %}
+
+{% block body %}
+    <div class="wrap">
+
+        <div class="wrapelement">
+            <div class="progress-radial progress-{{ temp }}">
+                <div class="overlay">temperatuur</div>
+                <div class="value">{{ waardeTemp }}°C</div>
+            </div>
+        </div>
+
+        <div class="wrapelement">
+            <div class="progress-radial progress-{{ humidity }}">
+                <div class="overlay">Humidity</div>
+                <div class="value">{{ waardeHumidity }}%</div>
+            </div>
+        </div>
+
+        <div class="wrapelement">
+            <div class="progress-radial progress-{{ pressureCircle }}">
+                <div class="overlay">barometer</div>
+                <div class="value">{{ pressureValue }}hPa</div>
+            </div>
+        </div>
+
+        <div class="wrapelement">
+            <div class="progress-radial progress-{{ cirkelwaarde }}">
+                <div class="overlay">LDR</div>
+                <div class="value">{{ percentage }}%</div>
+            </div>
+        </div>
+
+
+        <div class="wrapelement">
+            <div class="progress-radial progress-{{ cirkelRegen }}">
+                <div class="overlay">Rainfall</div>
+                <div class="value">{{ toestand }}</div>
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}

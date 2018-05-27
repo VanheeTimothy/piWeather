@@ -1,0 +1,189 @@
+{% extends 'graphspage.html' %}
+{% block title %}
+    Graphs Week format
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+
+    <script>
+
+
+        const temp = document.getElementById('tempChart');
+        console.log(temp);
+
+        Chart.defaults.global.defaultFontColor = 'white';
+        Chart.defaults.global.animation.easing = "easeOutQuart";
+
+        var temperatureChart = new Chart(temp, {
+            type: 'bar',
+            data: {
+                labels: [{% for dag in laatste7dagen %}"{{ dag }}",{% endfor %}],
+                datasets: [
+                    {
+                        label: 'TEMPERATURE',
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(137,28,24,0.4)",
+                        borderColor: "rgba(137,28,24,1)",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "rgba(137,28,24,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(137,28,24,1)",
+                        pointHoverBorderColor: "rgba(137,28,24,1)",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: [{% for temp in gemiddeldetemp %}{{ temp }},{% endfor %}]
+                    }
+                ]
+
+
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        stacked: true
+                    }],
+                    yAxes: [{
+                        stacked: true,
+                        beginAtZero: false
+                    }]
+                }
+            }
+        });
+        const hum = document.getElementById('humChart');
+        console.log(hum);
+        var humidityChart = new Chart(hum, {
+            type: 'bar',
+            data: {
+                labels: [{% for dag in laatste7dagen %}"{{ dag }}",{% endfor %}],
+                datasets: [
+                    {
+                        label: 'HUMIDITY',
+                        fill: true,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(75,192,192,0.4)",
+                        borderColor: "rgba(75,192,192,1)",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "rgba(7,192,192,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: [{% for vocht in gemiddeldehum %}{{ vocht }},{% endfor %}]
+                    }
+
+                ]
+            }
+        });
+
+         const ldr = document.getElementById('ldrChart');
+        var lightdependtresistor = new Chart(ldr, {
+            type: 'bar',
+            data: {
+                labels: [{% for dag in laatste7dagen %}"{{ dag }}",{% endfor %}],
+                datasets: [
+                    {
+                        label: 'LIGHT',
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(255,197,53,0.4)",
+                        borderColor: "rgba(255,185,0,1)",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "rgba(255,185,0,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(255,185,0,1)",
+                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: [{% for licht in gemiddeldelight %}{{ licht }},{% endfor %}]
+                    }
+
+                ]
+            }
+        });
+        const air = document.getElementById('airChart');
+        var airpressure = new Chart(air, {
+            type: 'bar',
+            data: {
+                labels: [{% for dag in laatste7dagen %}"{{ dag }}",{% endfor %}],
+                datasets: [
+                    {
+                        label: 'AIR PRESSURE',
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(137,38,102,0.4)",
+                        borderColor: "rgba(137,38,102,1)",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "rgba(137,44,40,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(137,38,102,1)",
+                        pointHoverBorderColor: "rgba(137,38,102,1)",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: [{% for air in gemiddeldeair %}{{ air }},{% endfor %}]
+                    }
+
+                ]
+            }
+        });
+
+        const rain = document.getElementById('rainChart');
+        var raindetectsensor = new Chart(rain, {
+            type: 'bar',
+            data: {
+                labels: [{% for dag in laatste7dagen %}"{{ dag }}",{% endfor %}],
+                datasets: [
+                    {
+                        label: 'RAINFALL',
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(61,255,68,0.4)",
+                        borderColor: "rgba(61,255,68,1)",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "rgba(61,255,68,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(61,255,68,1)",
+                        pointHoverBorderColor: "rgba(61,255,68,1)",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: [{% for rain in gemiddelderain %}{{ rain }},{% endfor %}]
+                    }
+
+                ]
+            }
+        });
+    </script>
+
+{% endblock %}

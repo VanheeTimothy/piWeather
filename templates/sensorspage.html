@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+    Sensors
+{% endblock %}
+
+{% block body %}
+    <div class="sensoren">
+        <div class="sensors">
+            <figure>
+                <img class="imgBMP280" src="{{ url_for('static', filename='img/BMP280.jpg') }}">
+                <figcaption><a href="https://cdn-shop.adafruit.com/datasheets/BST-BMP280-DS001-11.pdf" target="_blank">BMP280</a> </figcaption>
+            </figure>
+
+        </div>
+        <div class="sensors">
+            <figure>
+                <img src="{{ url_for('static', filename='img/DHT11.jpg') }}">
+                <figcaption><a href="http://www.micropik.com/PDF/dht11.pdf" target="_blank">DHT11</a> </figcaption>
+            </figure>
+
+        </div>
+        <div class="sensors">
+            <figure>
+                <img src="{{ url_for('static', filename='img/rainsensor.jpg') }}">
+                <figcaption><a href="https://wiki.eprolabs.com/images/b/b7/SEN-0039.pdf" target="_blank">Raindrop MH-RD</a></figcaption>
+            </figure>
+
+        </div>
+        <div class="sensors">
+            <figure>
+                <img src="{{ url_for('static', filename='img/LDR.png') }}">
+                <figcaption><a href="http://kennarar.vma.is/thor/v2011/vgr402/ldr.pdf" target="_blank">LDR</a> </figcaption>
+            </figure>
+
+        </div>
+        <div class="sensors">
+            <figure>
+                <img src="{{ url_for('static', filename='img/mcp3008.jpg') }}">
+                <figcaption><a href="https://cdn-shop.adafruit.com/datasheets/MCP3008.pdf" target="_blank">MCP3008</a> </figcaption>
+            </figure>
+
+        </div>
+        <div class="sensors">
+            <figure>
+                <img src="{{ url_for('static', filename='img/camera.jpg') }}">
+                <figcaption><a href="https://www.raspberrypi.org/documentation/hardware/camera/" target="_blank">Pi Camera</a> </figcaption>
+            </figure>
+
+        </div>
+    </div>
+{% endblock %}

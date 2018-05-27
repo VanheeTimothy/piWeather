@@ -1,0 +1,458 @@
+body {
+    margin: auto;
+    justify-content: center;
+    max-width: 90%;
+    background-color: #2f3439;
+    font-family: "Roboto Light", sans-serif;
+}
+
+header {
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url("img/header5.jpg");
+    background-position:center top;
+    display: flex;
+    margin-bottom: 0;
+    margin-top: 0;
+    height: 377px;
+
+}
+
+header span {
+    margin: auto;
+
+}
+
+header span h1 {
+    margin: auto;
+    font-family: Roboto-thin;
+    font-size: 3em;
+    font-style: italic;
+    text-decoration: solid;
+    color: white;
+    border: 3px white solid;
+    padding: 4% 6%;
+
+}
+
+nav ul {
+
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    background-color: #6E7A85;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+nav {
+    margin: 0;
+}
+
+nav ul li {
+    flex: 1;
+    min-width: 225px;
+    border-right: 1px solid #bbb;
+}
+
+nav ul li:last-child {
+    border-right: none;
+
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #2A2F33;
+}
+
+.wrap {
+    display: flex;
+    margin: 2% auto 0 auto;
+    flex-wrap: wrap;
+}
+
+/* -------------------------------------
+ * Bar container
+ * ------------------------------------- */
+.progress-radial {
+    margin-left: 35px;
+    float: left;
+    margin-right: 30px;
+    position: relative;
+
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 50%;
+    border: 2px solid #2f3439;
+    background-color: tomato;
+}
+
+/* -------------------------------------
+ * Optional centered circle w/text
+ * ------------------------------------- */
+.progress-radial .overlay {
+    position: absolute;
+    min-width: 160px;
+    min-height: 160px;
+    background-color: #fffde8;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 16px;
+}
+
+.progress-radial .value {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+
+    margin-left: 20px;
+    margin-top: 70px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 25px;
+}
+
+/* -------------------------------------
+ * Mixin for progress-% class
+ * ------------------------------------- */
+.progress-0 {
+    background-image: linear-gradient(90deg, #2f3439 50%, transparent 50%, transparent), linear-gradient(90deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-5 {
+    background-image: linear-gradient(90deg, #2f3439 50%, transparent 50%, transparent), linear-gradient(108deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-10 {
+    background-image: linear-gradient(90deg, #2f3439 50%, transparent 50%, transparent), linear-gradient(126deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-15 {
+    background-image: linear-gradient(90deg, #2f3439 50%, transparent 50%, transparent), linear-gradient(144deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-20 {
+    background-image: linear-gradient(90deg, #2f3439 50%, transparent 50%, transparent), linear-gradient(162deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-25 {
+    background-image: linear-gradient(90deg, #2f3439 50%, transparent 50%, transparent), linear-gradient(180deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-30 {
+    background-image: linear-gradient(90deg, #2f3439 50%, transparent 50%, transparent), linear-gradient(198deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-35 {
+    background-image: linear-gradient(90deg, #2f3439 50%, transparent 50%, transparent), linear-gradient(216deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-40 {
+    background-image: linear-gradient(90deg, #2f3439 50%, transparent 50%, transparent), linear-gradient(234deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-45 {
+    background-image: linear-gradient(90deg, #2f3439 50%, transparent 50%, transparent), linear-gradient(252deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-50 {
+    background-image: linear-gradient(-90deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-55 {
+    background-image: linear-gradient(-72deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-60 {
+    background-image: linear-gradient(-54deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-65 {
+    background-image: linear-gradient(-36deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-70 {
+    background-image: linear-gradient(-18deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-75 {
+    background-image: linear-gradient(0deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-80 {
+    background-image: linear-gradient(18deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-85 {
+    background-image: linear-gradient(36deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-90 {
+    background-image: linear-gradient(54deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-95 {
+    background-image: linear-gradient(72deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-100 {
+    background-image: linear-gradient(90deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #2f3439 50%, #2f3439);
+}
+
+/*end of progress circle */
+
+.navgraphs {
+    margin: 0;
+}
+
+.navgraphs ul {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    background-color: #2A2F33;
+}
+
+.navgraphs ul li {
+    flex: 1;
+
+}
+
+.navgraphs ul li a {
+    padding: 7px 8px;
+}
+
+.navgraphs ul li a:hover {
+    color: #6E7A85;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.flex-item {
+
+    width: 400px;
+    margin: 15px;
+    height: 400px;
+
+}
+
+
+
+.sensoren {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+
+
+}
+
+.sensors {
+    margin-bottom: 2%;
+    box-sizing: border-box;
+    display: flex;
+    margin-top: 5%;
+}
+
+.sensors figure {
+    width: 95%;
+    height: 95%;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    padding: 0;
+}
+
+.sensors figure > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.sensors figcaption {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #6E7A85;
+    text-align: center;
+    font-size: 1em;
+    display: inline;
+    width: 100%;
+    padding: 1% 0;
+}
+
+
+.sensors figure figcaption a{
+    text-decoration: none;
+    color: white;
+}
+
+.sensors figure figcaption a:hover{
+    text-decoration: none;
+    color: #6E7A85;
+    background-color: white;
+}
+
+
+
+.album {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.foto {
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    border: 2px yellow solid;
+    margin: 15px;
+}
+
+.setWarning {
+    color: white;
+    margin: 2% 0;
+    padding-bottom: 2%;
+}
+
+
+.listofwarnings {
+    color: white;
+    height: 250px;
+    margin-right: 2%;
+    width: 80%;
+
+
+}
+
+.listofwarnings td {
+    padding: 1%;
+    background-color: gray;
+}
+
+.listofwarnings .listtitletd {
+    width: 80%;
+    background-color: #2f3439;
+    padding: 1% 0;
+}
+
+
+.warningrow{
+    display: flex;
+    background-color: gray;
+    padding: 2%;
+    max-width:100% ;
+    min-width: 50%;
+    width: 100%;
+
+}
+
+.warningrow td{
+    margin-right: 1% ;
+}
+
+
+.camera {
+    color: white;
+    margin: 2% 0;
+    padding-bottom: 2%;
+}
+
+.camerarow{
+    display: flex;
+    background-color: gray;
+    padding: 2%;
+    width: 100%;
+
+}
+
+.camerarow td{
+    margin-right: 1% ;
+}
+
+.camerarow select{
+    margin-right: 1% ;
+}
+
+
+input {
+    font-size: 1.1em;
+}
+
+option {
+    font-size: 1.2em;
+}
+
+
+form{
+    margin-top: 2%;
+}
+
+.check{
+    margin-top: 2%;
+}
+
+.checksubtitle{
+    color: white;
+}
+
+.checktitle{
+    color: white;
+}
+
+.check h1{
+    color: white;
+}
+
+.check h2{
+    color: white;
+}
+
+
+.darkphoto{
+
+    width: 40%;
+    height: 40%;
+    float: right;
+}
+
+.about p{
+    color: #C2C6FF;
+    line-height: 150%;
+}
+
+
+.darkphoto img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 2%;
+}
+
+.about{
+    margin: 2% 1%;
+}
+
+.about h1{
+    color: #C2C6FF;
+    font-size: 2em;
+    margin-bottom: 1%;
+}

@@ -1,0 +1,180 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block body %}
+
+    <form action="{{ url_for('setwarningcheck') }}" method="post">
+        <table class="set">
+            <tr>
+                <td class="setWarning">Set warning:</td>
+            </tr>
+            <tr class="warningrow">
+                <td>
+                    <div class="form-group">
+                        <select id="sensor" title="sensor" name="sensor"
+                                onchange="populate(this.id, 'minValue', 'maxValue')" onload="populate(this.id, 'minValue', 'maxValue')">
+                            <option value="temperature sensor">temperature</option>
+                            <option value="air pressure sensor">air pressure</option>
+                            <option value="humidity sensor">Humidity</option>
+                            <option value="light dependant resistor sensor"> luminosity</option>
+                            <option value="rain sensor">Raindetect</option>
+                        </select>
+                    </div>
+
+                </td>
+
+                <td><input id="minValue" title="minValue" type="number" name="minValue">
+                </td>
+                <td><input id="maxValue" title="maxValue" type="number" name="maxValue"></td>
+                <td><input type="submit" value="set"></td>
+
+            </tr>
+        </table>
+
+    </form>
+    <hr>
+    <form action="{{ url_for('deletecheck') }}" method="post">
+        <table class="listofwarnings" border="1">
+            <tr>
+                <td class="listtitletd" colspan="5">List of Warnings:</td>
+            </tr>
+            <tr ID="tableHeader">
+                <td>ID</td>
+                <td>sensor name</td>
+                <td>min value</td>
+                <td>Max value</td>
+                <td></td>
+            </tr>
+            {% for tuple in listOfWarnings %}
+                <tr>
+                    {% for x in tuple %}
+                        <td>
+                            {{ x }}
+                        </td>
+                    {% endfor %}
+
+
+                    <td>
+                        <input title="checkbox" name="{{ tuple[0] }}" type="checkbox">
+
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="submit" value="delete"></td>
+            </tr>
+        </table>
+    </form>
+    <hr>
+    <form action="{{ url_for('cameratrigger') }}" method="post">
+        <table>
+            <tr>
+                <td class="camera">Camera</td>
+            </tr>
+            <tr>
+                <td class="camera">Triggers on:</td>
+            </tr>
+            <tr class="camerarow">
+                <td>
+                    <select id="camera-group" title="camera-group" name="camera-group" onchange="cameraf()" onload="cameraf()">
+                        <option value="temperature sensor">Time</option>
+                        <option value="rain sensor">Rain</option>
+                        <option value="air pressure sensor">air pressure</option>
+                    </select>
+                </td>
+                <td><input id="cameraInput" name="triggervalue"></td>
+                <td><input type="submit" value="set"> </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}
+{% block script %}
+    <script>
+
+        function cameraf() {
+            var cameraselectID = document.getElementById('camera-group');
+            var inputID = document.getElementById('cameraInput');
+            console.log(cameraselectID);
+            console.log(inputID);
+            console.log("cameraf");
+
+            if (cameraselectID.value === 'time') {
+                inputID.type = 'datetime-local';
+
+            }
+
+            else if (cameraselectID.value === 'rain') {
+                inputID.type = 'number';
+                inputID.min = '0';
+                inputID.max = '1023';
+
+            }
+
+            else if (cameraselectID === 'airpressure') {
+                inputID.type = 'number';
+                inputID.min = '300';
+                inputID.max = '1300';
+            }
+
+        }
+        console.log(cameraf());
+
+
+        function populate(selectid, minValueid, maxValueid) {
+            console.log("blabal");
+            var selectid = document.getElementById(selectid);
+            var minValueid = document.getElementById(minValueid);
+            var maxValueid = document.getElementById(maxValueid);
+
+            if (selectid.value === 'temperature sensor') {
+                minValueid.min = '-40';
+                minValueid.max = '80';
+                maxValueid.min = '-40';
+                maxValueid.max = '80';
+
+            }
+
+            else if (selectid.value === 'air pressure sensor') {
+                minValueid.min = '300';
+                minValueid.max = '1300';
+                maxValueid.min = '300';
+                maxValueid.max = '1300';
+
+            }
+
+            else if (selectid.value === 'rain sensor') {
+                minValueid.min = '0';
+                minValueid.max = '1023';
+                maxValueid.min = '0';
+                maxValueid.max = '1023';
+
+            }
+
+            else {
+                minValueid.min = '0';
+                minValueid.max = '100';
+                maxValueid.min = '0';
+                maxValueid.max = '100';
+
+            }
+
+            console.log(minValueid.max);
+
+        }
+
+        window.onload = populate();
+        window.onload = cameraf();
+
+
+    </script>
+{% endblock %}

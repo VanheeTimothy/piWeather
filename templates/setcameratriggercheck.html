@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    goedontvangen
+{% endblock %}
+
+{% block body %}
+    <div class="check"></div>
+    <h1 class="checktitle">The trigger is stored in the database</h1>
+    <h2 class="checksubtitle">Click <a href="{{ url_for('settings') }}">here</a> to go back. </h2>
+    </div>
+{% endblock %}

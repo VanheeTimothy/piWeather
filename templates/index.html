@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{{ url_for('static', filename='reset.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <span>
+        <h1>Pi Weather</h1>
+    </span>
+</header>
+<nav>
+    <ul>
+        <li><a {% block home %} {% endblock %} href="{{ url_for('home') }}">Home</a></li>
+        <li><a {% block graphs %} {% endblock %} href="{{ url_for('graphs') }}">Graphs</a></li>
+        <li><a {% block sensors %} {% endblock %} href="{{ url_for('sensors') }}">Sensors</a></li>
+        <li><a {% block photos %} {% endblock %} href="{{ url_for('photos') }}">Photos</a></li>
+        <li><a {% block about %} {% endblock %} href="{{ url_for('about') }}">About</a></li>
+        <li><a {% block settings %} {% endblock %} href="{{ url_for('settings') }}">Settings</a></li>
+    </ul>
+</nav>
+
+
+{% block body %}
+{% endblock %}
+{% block script %}
+{% endblock %}
+</body>
+</html>

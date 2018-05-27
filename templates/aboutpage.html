@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block body %}
+    <div class="about">
+        <h1>PiWeather1.0</h1>
+        <div class="darkphoto">
+            <img src="{{ url_for('static', filename='img/about1.jpg') }}">
+        </div>
+
+        <p>
+            The piWeather1.0 is a schoolproject based weatherstation. On the homepage you'll find the current value of
+            each sensor.
+            The circle of each sensor dependents on the value of that sensor.<br>
+            On the second page we find the graphs. The data of each sensor is logged and stored into a database with an
+            interval of one minute. The graphpage is divided into three subpages. We've got daily, weekly and monthly
+            graphs.<br>
+            Each graph on the daily page represents all the data logged today. That means we can track the value of the
+            sensor each minute.<br>
+            On the weekly and monthly page, each bar is representing the average value of one day.<br>
+            Let's move on to the sensorpage. Here we find an image of each sensor with their name. For
+            those who want some extra details, each figcaption is a link to the datasheet of the sensor. <br>
+            On the photo page you'll find photo's that are made with the piCamera.<br>
+            Last but not least, the settingspage. The user is here allowed to make some changes. For each sensor we can
+            set a warning. A warning will be sent to your emailadres if the value of the sensor is out range of the min
+            value and max value.<br>
+            It's not allowed to set more than one warning for a sensor because we're working with a range. Lets say you
+            want a warning when the lightsensors value is lower than 30% and higer than 60% you've to set its min value
+            to 31 and it max value to 59%.<br>
+            The allowed range of each sensor is set to it's lowest possible readable value and it's higest possible
+            readable value.<br>
+            A detailed instructable with step by step guide and a bills of materials are located at [link to instructable.com].
+            In the future updates will be provided, so feel free to check out my github.
+            <br>
+            piWeather 2.0 is on its way with new extra features. Stay tuned!
+
+
+        </p>
+    </div>
+
+{% endblock %}
